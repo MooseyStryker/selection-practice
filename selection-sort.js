@@ -2,10 +2,10 @@
 
 function selectionSort(arr) {
   // Copy the original array
-  const copy = arr.slice()
+  const copy = [...arr]
 
   // Create an array to store the sorted values
-  const sortedArr = []
+  const sorted = []
 
   // While the array is not empty...
   while (copy.length)
@@ -14,20 +14,21 @@ function selectionSort(arr) {
 
     // Find the index of the minimum value in the unsorted half
     let currentMinIndex = 0
-    for (let i = 0; i < copy.length; i++) {
+    for (let i = 1; i < copy.length; i++) {
       if (copy[i] < copy[currentMinIndex]) {
         currentMinIndex = i
       }
-
       // Save and remove the value at the min index
-      const currentMinValue = copy[currentMinIndex]
-      copy.splice(currentMinIndex, 1)
+
+      const val = copy.splice(currentMinIndex, 1)[0]
 
       // Add the min value to the end of the sorted array
-      sortedArr.push(currentMinValue)
+      sorted.push(val)
     }
-    return sortedArr
-}
+      return sorted
+    }
+
+
 
 
 function selectionSortInPlace(arr) {
