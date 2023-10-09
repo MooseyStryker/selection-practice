@@ -57,9 +57,10 @@ function selectionSortInPlace(arr) {
       arr[i] = arr[i - 1]
     }
     // Put the min value at the divider
+    arr[divider] = val
 
     // Increment the divider and repeat
-
+    divider++
   }
 
 }
