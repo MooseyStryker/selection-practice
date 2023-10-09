@@ -20,16 +20,14 @@ function selectionSort(arr) {
       }
 
       // Save and remove the value at the min index
-      const current
+      const currentMinValue = copy[currentMinIndex]
+      copy.splice(currentMinIndex, 1)
+
+      // Add the min value to the end of the sorted array
+      sortedArr.push(currentMinValue)
     }
-
-
-
-    // Add the min value to the end of the sorted array
-
+    return sortedArr
 }
-arr = [2,4,6,8,1,3,5,7,9];
-selectionSort(arr) //[2,4,6,8,1,3,5,7,9]
 
 
 function selectionSortInPlace(arr) {
